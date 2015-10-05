@@ -1,13 +1,19 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import org.jfugue.player.Player;
 
 public class Melodia {
 	private static Melodia instancia;
 	private List<Nota> notas;
 	
 	private Melodia(){
+		notas = new ArrayList<Nota>();
+		notas.add(Nota.A);
+		notas.add(Nota.B);
 	}
 	
 	public Melodia getInstance(){
@@ -37,6 +43,11 @@ public class Melodia {
 			builder.append(" ");
 		}
 		return builder.toString();
+	}
+	
+	public void play(){
+		Player player = new Player();
+		player.play(this.getString());
 	}
 	
 }

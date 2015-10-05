@@ -12,17 +12,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import listener.NotaButtonClickedListener;
  
 public class GuiJava{
  
-    JButton blanca,claveSol,corchea,fusa,negra,redonda,semiCorchea,semiFusa,A,B,C,D,E,F,G;
+    JButton blanca,claveSol,corchea,fusa,negra,redonda,semiCorchea,semiFusa,A,B,C,D,E,F,G,play;
  
     public GuiJava(){
  
-        JFrame frame = new JFrame("Compositor de melodías");
+        JFrame frame = new JFrame("Compositor de melodï¿½as");
         frame.setLayout(new FlowLayout());
         Dimension d = new Dimension();
  
@@ -53,7 +55,7 @@ public class GuiJava{
         G = new JButton("SOL");
         
         
-        //añadiendo el listener a los botones para manipular los eventos del click
+        //aï¿½adiendo el listener a los botones para manipular los eventos del click
         blanca.addActionListener(new NotaButtonClickedListener());
         blanca.setActionCommand("blanca");
         corchea.addActionListener(new NotaButtonClickedListener());
@@ -86,8 +88,8 @@ public class GuiJava{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
         //frame.setResizable(false);
         frame.setLocation((int) ((d.getWidth()/2)+290), 50);//para ubicar inicialmente donde se muestra el frame (x, y)
-        frame.setSize(700,500);//configurando tamaño del frame (ancho, alto)
-        frame.setVisible(true);//configurando visualización del frame
+        frame.setSize(700,800);//configurando tamaï¿½o del frame (ancho, alto)
+        frame.setVisible(true);//configurando visualizaciï¿½n del frame
         frame.setLayout(new FlowLayout());
         
         JPanel panel = new JPanel(new FlowLayout());
@@ -95,6 +97,7 @@ public class GuiJava{
         panel.setBackground(Color.ORANGE);
         panel.setPreferredSize(new Dimension(700, 350));
         frame.add(panel);
+        
         
         panel.add(blanca);
         panel.add(negra);
@@ -112,6 +115,20 @@ public class GuiJava{
         frame.add(G);
         frame.add(A);
         frame.add(B);
+        
+        JPanel melodyPanel = new JPanel(new FlowLayout());
+        melodyPanel.setSize(new Dimension(700, 100));
+        melodyPanel.setBackground(Color.GREEN);
+        melodyPanel.setPreferredSize(new Dimension(700, 100));
+        frame.add(melodyPanel);
+        
+        JTextField jtfUneditableText = new JTextField("Uneditable text field", 200);
+		jtfUneditableText.setEditable(false);
+        melodyPanel.add(jtfUneditableText);
+        
+        play = new JButton("Play!");
+        play.setActionCommand("play");
+        melodyPanel.add(play);
     }
  
     public static void main(String[] args) {
