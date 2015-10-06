@@ -59,33 +59,35 @@ public class GuiJava{
         
         
         //a�adiendo el listener a los botones para manipular los eventos del click
-        blanca.addActionListener(new SimboloButtonClickedListener());
+        SimboloButtonClickedListener simboloListener = new SimboloButtonClickedListener();
+        NotaButtonClickedListener notaListener = new NotaButtonClickedListener();
+        blanca.addActionListener(simboloListener);
         blanca.setActionCommand("blanca");
-        corchea.addActionListener(new SimboloButtonClickedListener());
+        corchea.addActionListener(simboloListener);
         corchea.setActionCommand("corchea");
-        fusa.addActionListener(new SimboloButtonClickedListener());
+        fusa.addActionListener(simboloListener);
         fusa.setActionCommand("fusa");
-        negra.addActionListener(new SimboloButtonClickedListener());
+        negra.addActionListener(simboloListener);
         negra.setActionCommand("negra");
-        redonda.addActionListener(new SimboloButtonClickedListener());
+        redonda.addActionListener(simboloListener);
         redonda.setActionCommand("redonda");
-        semiCorchea.addActionListener(new SimboloButtonClickedListener());
+        semiCorchea.addActionListener(simboloListener);
         semiCorchea.setActionCommand("semiCorchea");
-        semiFusa.addActionListener(new SimboloButtonClickedListener());
+        semiFusa.addActionListener(simboloListener);
         semiFusa.setActionCommand("semiFusa");
-        A.addActionListener(new NotaButtonClickedListener());
+        A.addActionListener(notaListener);
         A.setActionCommand("A");
-        B.addActionListener(new NotaButtonClickedListener());
+        B.addActionListener(notaListener);
         B.setActionCommand("B");
-        C.addActionListener(new NotaButtonClickedListener());
+        C.addActionListener(notaListener);
         C.setActionCommand("C");
-        D.addActionListener(new NotaButtonClickedListener());
+        D.addActionListener(notaListener);
         D.setActionCommand("D");
-        E.addActionListener(new NotaButtonClickedListener());
+        E.addActionListener(notaListener);
         E.setActionCommand("E");
-        F.addActionListener(new NotaButtonClickedListener());
+        F.addActionListener(notaListener);
         F.setActionCommand("F");
-        G.addActionListener(new NotaButtonClickedListener());
+        G.addActionListener(notaListener);
         G.setActionCommand("G");
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
@@ -140,7 +142,6 @@ public class GuiJava{
     }
  
     public static void main(String[] args) {
- 
         GuiJava gj = new GuiJava();
     }
 
