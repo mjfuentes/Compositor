@@ -14,4 +14,8 @@ public class DuracionSeleccionada {
 	public static Boolean hayDuracionSeleccionada(){
 		return (duracionSeleccionada != null);
 	}
+	
+	public static void quitarDuracionSeleccionada(){
+		duracionSeleccionada = null;
+	}
 }

@@ -29,6 +29,9 @@ public class NotaButtonClickedListener implements ActionListener{
 				case "D":
 					Melodia.getInstance().addNota(Nota.D,duracion);
 					break;
+				case "E":
+					Melodia.getInstance().addNota(Nota.E,duracion);
+					break;
 				case "F":
 					Melodia.getInstance().addNota(Nota.F,duracion);
 					break;
@@ -37,6 +40,7 @@ public class NotaButtonClickedListener implements ActionListener{
 					break;
 			}	
 			JOptionPane.showMessageDialog(null, "Nota agregada!");
+			DuracionSeleccionada.quitarDuracionSeleccionada();
 		}
 	}
 	

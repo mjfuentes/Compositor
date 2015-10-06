@@ -28,8 +28,6 @@ public class Melodia extends Observable {
 	private Melodia(){
 		notas = new ArrayList<TimedNote>();
 		player = new Player();
-		notas.add(new TimedNote(Nota.A, Duracion.FUSA));
-		notas.add(new TimedNote(Nota.C, Duracion.REDONDA));
 	}
 	
 	public static Melodia getInstance(){

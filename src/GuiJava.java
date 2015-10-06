@@ -31,14 +31,14 @@ public class GuiJava{
         frame.setLayout(new FlowLayout());
         Dimension d = new Dimension();
  
-        ImageIcon iBlanca = new ImageIcon("bin/blanca.png");
-        ImageIcon iClaveSol = new ImageIcon("bin/clavesol.png");
-        ImageIcon iCorchea = new ImageIcon("bin/corchea.png");
-        ImageIcon iFusa = new ImageIcon("bin/fusa.png");
-        ImageIcon iNegra = new ImageIcon("bin/negra.png");
-        ImageIcon iRedonda = new ImageIcon("bin/redonda.png");
-        ImageIcon iSemiCorchea = new ImageIcon("bin/semicorchea.png");
-        ImageIcon iSemiFusa = new ImageIcon("bin/semifusa.png");
+        ImageIcon iBlanca = new ImageIcon("images/blanca.png");
+        ImageIcon iClaveSol = new ImageIcon("images/clavesol.png");
+        ImageIcon iCorchea = new ImageIcon("images/corchea.png");
+        ImageIcon iFusa = new ImageIcon("images/fusa.png");
+        ImageIcon iNegra = new ImageIcon("images/negra.png");
+        ImageIcon iRedonda = new ImageIcon("images/redonda.png");
+        ImageIcon iSemiCorchea = new ImageIcon("images/semicorchea.png");
+        ImageIcon iSemiFusa = new ImageIcon("images/semifusa.png");
         
     
         blanca = new JButton(iBlanca);
