@@ -59,19 +59,19 @@ public class GuiJava{
         
         
         //a�adiendo el listener a los botones para manipular los eventos del click
-        blanca.addActionListener(new NotaButtonClickedListener());
+        blanca.addActionListener(new SimboloButtonClickedListener());
         blanca.setActionCommand("blanca");
-        corchea.addActionListener(new NotaButtonClickedListener());
+        corchea.addActionListener(new SimboloButtonClickedListener());
         corchea.setActionCommand("corchea");
-        fusa.addActionListener(new NotaButtonClickedListener());
+        fusa.addActionListener(new SimboloButtonClickedListener());
         fusa.setActionCommand("fusa");
-        negra.addActionListener(new NotaButtonClickedListener());
+        negra.addActionListener(new SimboloButtonClickedListener());
         negra.setActionCommand("negra");
-        redonda.addActionListener(new NotaButtonClickedListener());
+        redonda.addActionListener(new SimboloButtonClickedListener());
         redonda.setActionCommand("redonda");
-        semiCorchea.addActionListener(new NotaButtonClickedListener());
+        semiCorchea.addActionListener(new SimboloButtonClickedListener());
         semiCorchea.setActionCommand("semiCorchea");
-        semiFusa.addActionListener(new NotaButtonClickedListener());
+        semiFusa.addActionListener(new SimboloButtonClickedListener());
         semiFusa.setActionCommand("semiFusa");
         A.addActionListener(new NotaButtonClickedListener());
         A.setActionCommand("A");

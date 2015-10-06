@@ -41,10 +41,14 @@ public class Melodia extends Observable {
 
 	public void addNota(Nota nota, Duracion duracion){
 		notas.add(new TimedNote(nota, duracion));
+		setChanged();
+		notifyObservers();
 	}
 	
 	public void removeNota(Nota nota){
 		notas.remove(nota);
+		setChanged();
+		notifyObservers();
 	}
 	
 	public String getString(){
