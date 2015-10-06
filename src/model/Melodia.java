@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -8,27 +9,25 @@ import org.jfugue.player.Player;
 
 public class Melodia {
 	private static Melodia instancia;
-	private List<Nota> notas;
+	private List<TimedNote> notas;
+	private Player player;
 	
 	private Melodia(){
-		notas = new ArrayList<Nota>();
-		notas.add(Nota.A);
-		notas.add(Nota.B);
+		notas = new ArrayList<TimedNote>();
+		player = new Player();
+		notas.add(new TimedNote(Nota.A, 5));
+		notas.add(new TimedNote(Nota.C, 2));
 	}
 	
-	public Melodia getInstance(){
+	public static Melodia getInstance(){
 		if (instancia == null){
 			instancia = new Melodia();
 		}
 		return instancia;
 	}
 
-	public List<Nota> getNotas() {
-		return notas;
-	}
-
-	public void addNota(Nota nota){
-		notas.add(nota);
+	public void addNota(Nota nota, Integer duracion){
+		notas.add(new TimedNote(nota, duracion));
 	}
 	
 	public void removeNota(Nota nota){
@@ -37,7 +36,7 @@ public class Melodia {
 	
 	public String getString(){
 		StringBuilder builder = new StringBuilder();
-		Iterator<Nota> iterator = notas.iterator();
+		Iterator<TimedNote> iterator = notas.iterator();
 		while(iterator.hasNext()){
 			builder.append((iterator.next()).toString());
 			builder.append(" ");
@@ -46,7 +45,6 @@ public class Melodia {
 	}
 	
 	public void play(){
-		Player player = new Player();
 		player.play(this.getString());
 	}
 	

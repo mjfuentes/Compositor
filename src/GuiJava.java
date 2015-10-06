@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 
 import listener.NotaButtonClickedListener;
 import listener.SimboloButtonClickedListener;
+import model.Melodia;
  
 public class GuiJava{
  
@@ -25,7 +26,7 @@ public class GuiJava{
  
     public GuiJava(){
  
-        JFrame frame = new JFrame("Compositor de melodías");
+        JFrame frame = new JFrame("Compositor de melodï¿½as");
         frame.setLayout(new FlowLayout());
         Dimension d = new Dimension();
  
@@ -56,7 +57,7 @@ public class GuiJava{
         G = new JButton("SOL");
         
         
-        //añadiendo el listener a los botones para manipular los eventos del click
+        //aï¿½adiendo el listener a los botones para manipular los eventos del click
         blanca.addActionListener(new NotaButtonClickedListener());
         blanca.setActionCommand("blanca");
         corchea.addActionListener(new NotaButtonClickedListener());
@@ -124,7 +125,7 @@ public class GuiJava{
         melodyPanel.setPreferredSize(new Dimension(700, 200));
         frame.add(melodyPanel);
         
-        JTextField jtfUneditableText = new JTextField("MELODIA A SONAR", 50);
+        JTextField jtfUneditableText = new JTextField(Melodia.getInstance().getString(), 50);
 		jtfUneditableText.setEditable(false);
         melodyPanel.add(jtfUneditableText);
         
@@ -133,7 +134,7 @@ public class GuiJava{
         play.setActionCommand("play");
         melodyPanel.add(play);
         
-        frame.setVisible(true);//configurando visualización del frame
+        frame.setVisible(true);//configurando visualizaciï¿½n del frame
     }
  
     public static void main(String[] args) {

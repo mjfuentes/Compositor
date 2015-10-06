@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import model.Melodia;
+
 public class SimboloButtonClickedListener implements ActionListener {
 	
 	int corrimiento;
@@ -41,6 +43,9 @@ public class SimboloButtonClickedListener implements ActionListener {
 				break;
 			case "semiFusa":
 				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				break;
+			case "play":
+				Melodia.getInstance().play();
 				break;
 		}	
 	}
