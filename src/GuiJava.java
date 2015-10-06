@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 import listener.NotaButtonClickedListener;
 import listener.SimboloButtonClickedListener;
 import model.Melodia;
+import model.Texto;
  
 public class GuiJava{
  
@@ -125,9 +126,10 @@ public class GuiJava{
         melodyPanel.setPreferredSize(new Dimension(700, 200));
         frame.add(melodyPanel);
         
-        JTextField jtfUneditableText = new JTextField(Melodia.getInstance().getString(), 50);
-		jtfUneditableText.setEditable(false);
-        melodyPanel.add(jtfUneditableText);
+        Texto texto = new Texto(Melodia.getInstance().getString(), 50);
+        texto.setEditable(false);
+        melodyPanel.add(texto);
+        Melodia.getInstance().addObserver(texto);
         
         play = new JButton("Play!");
         play.addActionListener(new SimboloButtonClickedListener());

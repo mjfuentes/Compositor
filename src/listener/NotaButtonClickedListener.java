@@ -5,30 +5,39 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import model.Duracion;
+import model.DuracionSeleccionada;
+import model.Melodia;
+import model.Nota;
+
 public class NotaButtonClickedListener implements ActionListener{
 	
 	public void actionPerformed(ActionEvent e) {
-		String action = e.getActionCommand();
-		switch (action){
-			case "A":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
-				break;
-			case "B":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
-				break;
-			case "C":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
-				break;
-			case "D":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
-				break;
-			case "F":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
-				break;
-			case "G":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
-				break;
-		}	
+		if (DuracionSeleccionada.hayDuracionSeleccionada()){
+			Duracion duracion = DuracionSeleccionada.getDuracionSeleccionada();
+			String action = e.getActionCommand();
+			switch (action){
+				case "A":
+					Melodia.getInstance().addNota(Nota.A,duracion);
+					break;
+				case "B":
+					Melodia.getInstance().addNota(Nota.B,duracion);
+					break;
+				case "C":
+					Melodia.getInstance().addNota(Nota.C,duracion);
+					break;
+				case "D":
+					Melodia.getInstance().addNota(Nota.D,duracion);
+					break;
+				case "F":
+					Melodia.getInstance().addNota(Nota.F,duracion);
+					break;
+				case "G":
+					Melodia.getInstance().addNota(Nota.G,duracion);
+					break;
+			}	
+			JOptionPane.showMessageDialog(null, "Nota agregada!");
+		}
 	}
 	
 

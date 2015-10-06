@@ -6,19 +6,11 @@ public class TimedNote {
 		return (nota.toString()+duracion.toString());
 	}
 	Nota nota;
-	Integer duracion;
+	Duracion duracion;
 	
-	public TimedNote(Nota nota, Integer duracion) {
+	public TimedNote(Nota nota, Duracion duracion) {
 		this.nota = nota;
 		this.duracion = duracion;
 	}
-	
-	public Nota getNota() {
-		return nota;
-	}
-	public Integer getDuracion() {
-		return duracion;
-	}
-	
 	
 }

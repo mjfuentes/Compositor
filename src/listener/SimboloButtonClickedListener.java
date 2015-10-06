@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import model.Duracion;
+import model.DuracionSeleccionada;
 import model.Melodia;
 
 public class SimboloButtonClickedListener implements ActionListener {
@@ -24,25 +26,25 @@ public class SimboloButtonClickedListener implements ActionListener {
 		String action = e.getActionCommand();
 		switch (action){
 			case "blanca":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				DuracionSeleccionada.setDuracionSeleccionada(Duracion.BLANCA);
 				break;
 			case "negra":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				DuracionSeleccionada.setDuracionSeleccionada(Duracion.NEGRA);
 				break;
 			case "corchea":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				DuracionSeleccionada.setDuracionSeleccionada(Duracion.CORCHEA);
 				break;
 			case "fusa":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				DuracionSeleccionada.setDuracionSeleccionada(Duracion.FUSA);
 				break;
 			case "redonda":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				DuracionSeleccionada.setDuracionSeleccionada(Duracion.REDONDA);
 				break;
 			case "semiCorchea":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				DuracionSeleccionada.setDuracionSeleccionada(Duracion.SEMICORCHEA);
 				break;
 			case "semiFusa":
-				JOptionPane.showMessageDialog(null, e.getActionCommand());
+				DuracionSeleccionada.setDuracionSeleccionada(Duracion.SEMIFUSA);
 				break;
 			case "play":
 				Melodia.getInstance().play();

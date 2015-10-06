@@ -4,10 +4,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
 import org.jfugue.player.Player;
 
-public class Melodia {
+public class Melodia extends Observable {
+	
+	@Override
+	public synchronized void addObserver(Observer o) {
+		super.addObserver(o);
+	}
+
+	@Override
+	public void notifyObservers() {
+		super.notifyObservers();
+	}
+
 	private static Melodia instancia;
 	private List<TimedNote> notas;
 	private Player player;
@@ -15,8 +28,8 @@ public class Melodia {
 	private Melodia(){
 		notas = new ArrayList<TimedNote>();
 		player = new Player();
-		notas.add(new TimedNote(Nota.A, 5));
-		notas.add(new TimedNote(Nota.C, 2));
+		notas.add(new TimedNote(Nota.A, Duracion.FUSA));
+		notas.add(new TimedNote(Nota.C, Duracion.REDONDA));
 	}
 	
 	public static Melodia getInstance(){
@@ -26,7 +39,7 @@ public class Melodia {
 		return instancia;
 	}
 
-	public void addNota(Nota nota, Integer duracion){
+	public void addNota(Nota nota, Duracion duracion){
 		notas.add(new TimedNote(nota, duracion));
 	}
 	
