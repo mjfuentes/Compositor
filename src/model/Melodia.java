@@ -11,15 +11,6 @@ import org.jfugue.player.Player;
 
 public class Melodia extends Observable {
 	
-	@Override
-	public synchronized void addObserver(Observer o) {
-		super.addObserver(o);
-	}
-
-	@Override
-	public void notifyObservers() {
-		super.notifyObservers();
-	}
 
 	private static Melodia instancia;
 	private List<TimedNote> notas;
