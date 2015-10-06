@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import listener.NotaButtonClickedListener;
+import listener.SimboloButtonClickedListener;
  
 public class GuiJava{
  
@@ -24,7 +25,7 @@ public class GuiJava{
  
     public GuiJava(){
  
-        JFrame frame = new JFrame("Compositor de melodï¿½as");
+        JFrame frame = new JFrame("Compositor de melodías");
         frame.setLayout(new FlowLayout());
         Dimension d = new Dimension();
  
@@ -55,7 +56,7 @@ public class GuiJava{
         G = new JButton("SOL");
         
         
-        //aï¿½adiendo el listener a los botones para manipular los eventos del click
+        //añadiendo el listener a los botones para manipular los eventos del click
         blanca.addActionListener(new NotaButtonClickedListener());
         blanca.setActionCommand("blanca");
         corchea.addActionListener(new NotaButtonClickedListener());
@@ -86,18 +87,15 @@ public class GuiJava{
         G.setActionCommand("G");
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
-        //frame.setResizable(false);
         frame.setLocation((int) ((d.getWidth()/2)+290), 50);//para ubicar inicialmente donde se muestra el frame (x, y)
-        frame.setSize(700,800);//configurando tamaï¿½o del frame (ancho, alto)
-        frame.setVisible(true);//configurando visualizaciï¿½n del frame
+        frame.setSize(700,450);//configurando tamaï¿½o del frame (ancho, alto)
         frame.setLayout(new FlowLayout());
         
-        JPanel panel = new JPanel(new FlowLayout());
-        panel.setSize(new Dimension(700, 350));
-        panel.setBackground(Color.ORANGE);
-        panel.setPreferredSize(new Dimension(700, 350));
-        frame.add(panel);
         
+        JPanel panel = new JPanel(new FlowLayout());
+        panel.setBackground(Color.ORANGE);
+        panel.setPreferredSize(new Dimension(700, 100));
+        frame.add(panel);
         
         panel.add(blanca);
         panel.add(negra);
@@ -107,28 +105,35 @@ public class GuiJava{
         panel.add(semiFusa);
         panel.add(redonda);
      
+        JPanel panel2 = new JPanel(new FlowLayout());
+        panel2.setBackground(Color.GREEN);
+        panel2.setPreferredSize(new Dimension(700, 100));
+        frame.add(panel2);
         
-        frame.add(C);
-        frame.add(D);
-        frame.add(E);
-        frame.add(F);
-        frame.add(G);
-        frame.add(A);
-        frame.add(B);
+        panel2.add(C);
+        panel2.add(D);
+        panel2.add(E);
+        panel2.add(F);
+        panel2.add(G);
+        panel2.add(A);
+        panel2.add(B);
+       
         
         JPanel melodyPanel = new JPanel(new FlowLayout());
-        melodyPanel.setSize(new Dimension(700, 100));
-        melodyPanel.setBackground(Color.GREEN);
-        melodyPanel.setPreferredSize(new Dimension(700, 100));
+        melodyPanel.setBackground(Color.BLUE);
+        melodyPanel.setPreferredSize(new Dimension(700, 200));
         frame.add(melodyPanel);
         
-        JTextField jtfUneditableText = new JTextField("Uneditable text field", 200);
+        JTextField jtfUneditableText = new JTextField("MELODIA A SONAR", 50);
 		jtfUneditableText.setEditable(false);
         melodyPanel.add(jtfUneditableText);
         
         play = new JButton("Play!");
+        play.addActionListener(new SimboloButtonClickedListener());
         play.setActionCommand("play");
         melodyPanel.add(play);
+        
+        frame.setVisible(true);//configurando visualización del frame
     }
  
     public static void main(String[] args) {
