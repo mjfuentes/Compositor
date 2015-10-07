@@ -2,9 +2,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Line2D;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -136,17 +139,31 @@ public class GuiJava{
         play.setActionCommand("play");
         melodyPanel.add(play);
         
-        JPanel panelPentagrama = new JPanel(new BorderLayout());
+        JPanel panelPentagrama = new JPanel(null);
         panelPentagrama.setBackground(Color.WHITE);
         panelPentagrama.setPreferredSize(new Dimension(600, 100));
         frame.add(panelPentagrama);
         
-        JLabel picLabel = new JLabel(iClaveSol);
-        panelPentagrama.add(picLabel, BorderLayout.WEST);
+        JLabel clave = new JLabel(iClaveSol);
+        clave.setBounds(10,0,50,100); 
+        panelPentagrama.add(clave);
         
-        
-  
-       
+        ImageIcon iLinea = new ImageIcon("images/linea.png");
+        JLabel linea1 = new JLabel(iLinea);
+        JLabel linea2 = new JLabel(iLinea);
+        JLabel linea3 = new JLabel(iLinea);
+        JLabel linea4 = new JLabel(iLinea);
+        JLabel linea5 = new JLabel(iLinea);
+        linea1.setBounds(0,20,600,100); 
+        panelPentagrama.add(linea1);
+        linea2.setBounds(0,10,600,100); 
+        panelPentagrama.add(linea2);
+        linea3.setBounds(0,0,600,100); 
+        panelPentagrama.add(linea3);
+        linea4.setBounds(0,-10,600,100); 
+        panelPentagrama.add(linea4);
+        linea5.setBounds(0,-20,600,100); 
+        panelPentagrama.add(linea5);
         
         frame.setVisible(true);//configurando visualización del frame
     }
