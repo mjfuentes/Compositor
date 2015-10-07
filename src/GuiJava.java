@@ -19,7 +19,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import listener.NotaButtonClickedListener;
+import listener.PentagramaClickedListener;
 import listener.SimboloButtonClickedListener;
 import model.Melodia;
 import model.Texto;
@@ -50,18 +50,11 @@ public class GuiJava{
         redonda = new JButton(iRedonda);
         semiCorchea = new JButton(iSemiCorchea);
         semiFusa = new JButton(iSemiFusa);
-        A = new JButton("LA");
-        B = new JButton("SI");
-        C = new JButton("DO");
-        D = new JButton("RE");
-        E = new JButton("MI");
-        F = new JButton("FA");
-        G = new JButton("SOL");
         
         
         //a�adiendo el listener a los botones para manipular los eventos del click
         SimboloButtonClickedListener simboloListener = new SimboloButtonClickedListener();
-        NotaButtonClickedListener notaListener = new NotaButtonClickedListener();
+        PentagramaClickedListener pentagramaListener = new PentagramaClickedListener();
         blanca.addActionListener(simboloListener);
         blanca.setActionCommand("blanca");
         corchea.addActionListener(simboloListener);
@@ -76,20 +69,7 @@ public class GuiJava{
         semiCorchea.setActionCommand("semiCorchea");
         semiFusa.addActionListener(simboloListener);
         semiFusa.setActionCommand("semiFusa");
-        A.addActionListener(notaListener);
-        A.setActionCommand("A");
-        B.addActionListener(notaListener);
-        B.setActionCommand("B");
-        C.addActionListener(notaListener);
-        C.setActionCommand("C");
-        D.addActionListener(notaListener);
-        D.setActionCommand("D");
-        E.addActionListener(notaListener);
-        E.setActionCommand("E");
-        F.addActionListener(notaListener);
-        F.setActionCommand("F");
-        G.addActionListener(notaListener);
-        G.setActionCommand("G");
+        
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
         frame.setLocation((int) ((d.getWidth()/2)+290), 50);//para ubicar inicialmente donde se muestra el frame (x, y)
@@ -109,20 +89,6 @@ public class GuiJava{
         panel.add(semiCorchea);
         panel.add(semiFusa);
         panel.add(redonda);
-     
-        JPanel panel2 = new JPanel(new FlowLayout());
-        panel2.setBackground(Color.GREEN);
-        panel2.setPreferredSize(new Dimension(700, 50));
-        frame.add(panel2);
-        
-        panel2.add(C);
-        panel2.add(D);
-        panel2.add(E);
-        panel2.add(F);
-        panel2.add(G);
-        panel2.add(A);
-        panel2.add(B);
-       
         
         JPanel melodyPanel = new JPanel(new FlowLayout());
         melodyPanel.setBackground(Color.BLUE);
@@ -143,8 +109,10 @@ public class GuiJava{
         panelPentagrama.setBackground(Color.WHITE);
         panelPentagrama.setPreferredSize(new Dimension(600, 100));
         panelPentagrama.setLayout(null);
-        frame.add(panelPentagrama);                                                                                                                                                 
-        notaListener.addPentagrama(panelPentagrama);
+        frame.add(panelPentagrama);      
+        panelPentagrama.addMouseListener(pentagramaListener);
+        pentagramaListener.addPentagrama(panelPentagrama);
+        
         
 
         JLabel clave = new JLabel(iClaveSol);
