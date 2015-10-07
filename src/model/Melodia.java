@@ -27,6 +27,10 @@ public class Melodia extends Observable {
 		}
 		return instancia;
 	}
+	
+	public int getCantNotas(){
+		return notas.size();
+	}
 
 	public void addNota(Nota nota, Duracion duracion){
 		notas.add(new TimedNote(nota, duracion));

@@ -11,16 +11,6 @@ import model.Melodia;
 
 public class SimboloButtonClickedListener implements ActionListener {
 	
-	int corrimiento;
-	
-	public void setCorrimiento(int c){
-		corrimiento= c;
-	}
-	public int getCorrimiento(){
-		return corrimiento;
-	}
-
-	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String action = e.getActionCommand();

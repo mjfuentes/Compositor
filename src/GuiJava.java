@@ -138,6 +138,12 @@ public class GuiJava{
         play.setActionCommand("play");
         melodyPanel.add(play);
         
+        JPanel panelPentagrama = new JPanel(new GridLayout());
+        panelPentagrama.setBackground(Color.WHITE);
+        panelPentagrama.setPreferredSize(new Dimension(700, 200));
+        frame.add(panelPentagrama);
+        notaListener.addPentagrama(panelPentagrama);
+        
         frame.setVisible(true);//configurando visualizaci�n del frame
     }
  
