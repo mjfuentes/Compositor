@@ -2,9 +2,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.Line2D;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -12,6 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -31,14 +34,14 @@ public class GuiJava{
         frame.setLayout(new FlowLayout());
         Dimension d = new Dimension();
  
-        ImageIcon iBlanca = new ImageIcon(this.getClass().getResource("/Img/blanca.png"));
-        ImageIcon iCorchea = new ImageIcon(this.getClass().getResource("/Img/corchea.png"));
-        ImageIcon iFusa = new ImageIcon(this.getClass().getResource("/Img/fusa.png"));
-        ImageIcon iNegra = new ImageIcon(this.getClass().getResource("/Img/negra.png"));
-        ImageIcon iRedonda = new ImageIcon(this.getClass().getResource("/Img/redonda.png"));
-        ImageIcon iSemiCorchea = new ImageIcon(this.getClass().getResource("/Img/semicorchea.png"));
-        ImageIcon iSemiFusa = new ImageIcon(this.getClass().getResource("/Img/semifusa.png"));
-        ImageIcon iClaveSol = new ImageIcon(this.getClass().getResource("/Img/clavesol.png"));
+        ImageIcon iBlanca = new ImageIcon(this.getClass().getResource("/ui/blanca.png"));
+        ImageIcon iCorchea = new ImageIcon(this.getClass().getResource("/ui/corchea.png"));
+        ImageIcon iFusa = new ImageIcon(this.getClass().getResource("/ui/fusa.png"));
+        ImageIcon iNegra = new ImageIcon(this.getClass().getResource("/ui/negra.png"));
+        ImageIcon iRedonda = new ImageIcon(this.getClass().getResource("/ui/redonda.png"));
+        ImageIcon iSemiCorchea = new ImageIcon(this.getClass().getResource("/ui/semicorchea.png"));
+        ImageIcon iSemiFusa = new ImageIcon(this.getClass().getResource("/ui/semifusa.png"));
+        ImageIcon iClaveSol = new ImageIcon(this.getClass().getResource("/ui/clavesol.png"));
     
         blanca = new JButton(iBlanca);
         corchea = new JButton(iCorchea);
@@ -135,22 +138,35 @@ public class GuiJava{
         play.addActionListener(new SimboloButtonClickedListener());
         play.setActionCommand("play");
         melodyPanel.add(play);
-        
 
-        JPanel panelPentagrama = new JPanel();
+        JPanel panelPentagrama = new JPanel(null);
         panelPentagrama.setBackground(Color.WHITE);
         panelPentagrama.setPreferredSize(new Dimension(600, 100));
         panelPentagrama.setLayout(null);
         frame.add(panelPentagrama);                                                                                                                                                 
         notaListener.addPentagrama(panelPentagrama);
         
-        
-        JLabel picLabel = new JLabel(iClaveSol);
-        panelPentagrama.add(picLabel);
-        Dimension size = picLabel.getPreferredSize();
-        picLabel.setBounds(100, 100, size.width, size.height);
-        
 
+        JLabel clave = new JLabel(iClaveSol);
+        clave.setBounds(10,0,50,100); 
+        panelPentagrama.add(clave);
+        
+        ImageIcon iLinea = new ImageIcon("images/linea.png");
+        JLabel linea1 = new JLabel(iLinea);
+        JLabel linea2 = new JLabel(iLinea);
+        JLabel linea3 = new JLabel(iLinea);
+        JLabel linea4 = new JLabel(iLinea);
+        JLabel linea5 = new JLabel(iLinea);
+        linea1.setBounds(0,20,600,100); 
+        panelPentagrama.add(linea1);
+        linea2.setBounds(0,10,600,100); 
+        panelPentagrama.add(linea2);
+        linea3.setBounds(0,0,600,100); 
+        panelPentagrama.add(linea3);
+        linea4.setBounds(0,-10,600,100); 
+        panelPentagrama.add(linea4);
+        linea5.setBounds(0,-20,600,100); 
+        panelPentagrama.add(linea5);
         
         frame.setVisible(true);//configurando visualizaci�n del frame
     }

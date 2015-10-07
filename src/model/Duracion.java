@@ -1,7 +1,7 @@
 package model;
 
 public enum Duracion {
-	BLANCA("h","images/blanca.png"), CORCHEA("i","images/corchea.png"), FUSA("t","images/fusa.png"), NEGRA("q","images/negra.png"), REDONDA("w","images/redonda.png"), SEMICORCHEA("s","images/semicorchea.png"), SEMIFUSA("x","images/semifusa.png");
+	BLANCA("h","ui/blanca.png"), CORCHEA("i","ui/corchea.png"), FUSA("t","ui/fusa.png"), NEGRA("q","ui/negra.png"), REDONDA("w","ui/redonda.png"), SEMICORCHEA("s","ui/semicorchea.png"), SEMIFUSA("x","ui/semifusa.png");
 	@Override
 	public String toString() {
 		return this.duration;
