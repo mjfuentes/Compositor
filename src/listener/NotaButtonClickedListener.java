@@ -32,36 +32,36 @@ public class NotaButtonClickedListener implements ActionListener{
 			switch (action){
 				case "A":
 					Melodia.getInstance().addNota(Nota.A,duracion);
-					nota.setBounds(x, 13, 30, 30);
+					nota.setBounds(x, 28, 30, 30);
 					break;
 				case "B":
 					Melodia.getInstance().addNota(Nota.B,duracion);
-					nota.setBounds(x, 3, 30, 30);
+					nota.setBounds(x, 22, 30, 30);
 					break;
 				case "C":
 					Melodia.getInstance().addNota(Nota.C,duracion);
-					nota.setBounds(x, 63, 30, 30);
+					nota.setBounds(x, 58, 30, 30);
 					break;
 				case "D":
 					Melodia.getInstance().addNota(Nota.D,duracion);
-					nota.setBounds(x, 53, 30, 30);
+					nota.setBounds(x, 52, 30, 30);
 					break;
 				case "E":
 					Melodia.getInstance().addNota(Nota.E,duracion);
-					nota.setBounds(x, 43, 30, 30);
+					nota.setBounds(x, 46, 30, 30);
 					break;
 				case "F":
 					Melodia.getInstance().addNota(Nota.F,duracion);
-					nota.setBounds(x, 33, 30, 30);
+					nota.setBounds(x, 40, 30, 30);
 					break;
 				case "G":
 					Melodia.getInstance().addNota(Nota.G,duracion);
-					nota.setBounds(x, 23, 30, 30);
+					nota.setBounds(x, 34, 30, 30);
 					break;
 			}	
 			JOptionPane.showMessageDialog(null, "Nota agregada!");
 			DuracionSeleccionada.quitarDuracionSeleccionada();
-			this.pentagrama.add(nota,3);
+			this.pentagrama.add(nota,Melodia.getInstance().getCantNotas(),0);
 			this.pentagrama.revalidate();
 			this.pentagrama.repaint();
 		}
