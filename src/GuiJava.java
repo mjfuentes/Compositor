@@ -32,17 +32,15 @@ public class GuiJava{
         Dimension d = new Dimension();
  
         ImageIcon iBlanca = new ImageIcon("images/blanca.png");
-        ImageIcon iClaveSol = new ImageIcon("images/clavesol.png");
         ImageIcon iCorchea = new ImageIcon("images/corchea.png");
         ImageIcon iFusa = new ImageIcon("images/fusa.png");
         ImageIcon iNegra = new ImageIcon("images/negra.png");
         ImageIcon iRedonda = new ImageIcon("images/redonda.png");
         ImageIcon iSemiCorchea = new ImageIcon("images/semicorchea.png");
         ImageIcon iSemiFusa = new ImageIcon("images/semifusa.png");
-        
+        ImageIcon iClaveSol = new ImageIcon("images/clavesol.png");
     
         blanca = new JButton(iBlanca);
-        claveSol = new JButton(iClaveSol);
         corchea = new JButton(iCorchea);
         fusa = new JButton(iFusa);
         negra = new JButton(iNegra);
@@ -109,7 +107,7 @@ public class GuiJava{
      
         JPanel panel2 = new JPanel(new FlowLayout());
         panel2.setBackground(Color.GREEN);
-        panel2.setPreferredSize(new Dimension(700, 100));
+        panel2.setPreferredSize(new Dimension(700, 50));
         frame.add(panel2);
         
         panel2.add(C);
@@ -123,7 +121,7 @@ public class GuiJava{
         
         JPanel melodyPanel = new JPanel(new FlowLayout());
         melodyPanel.setBackground(Color.BLUE);
-        melodyPanel.setPreferredSize(new Dimension(700, 200));
+        melodyPanel.setPreferredSize(new Dimension(700, 100));
         frame.add(melodyPanel);
         
         Texto texto = new Texto(Melodia.getInstance().getString(), 50);
@@ -136,7 +134,19 @@ public class GuiJava{
         play.setActionCommand("play");
         melodyPanel.add(play);
         
-        frame.setVisible(true);//configurando visualizaciï¿½n del frame
+        JPanel panelPentagrama = new JPanel(new BorderLayout());
+        panelPentagrama.setBackground(Color.WHITE);
+        panelPentagrama.setPreferredSize(new Dimension(600, 100));
+        frame.add(panelPentagrama);
+        
+        JLabel picLabel = new JLabel(iClaveSol);
+        panelPentagrama.add(picLabel, BorderLayout.WEST);
+        
+        
+  
+       
+        
+        frame.setVisible(true);//configurando visualización del frame
     }
  
     public static void main(String[] args) {
