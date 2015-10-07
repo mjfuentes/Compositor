@@ -1,5 +1,6 @@
 package listener;
 
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,7 +15,7 @@ import model.Melodia;
 import model.Nota;
 
 public class NotaButtonClickedListener implements ActionListener{
-	int baseDistance = 0;
+	int baseDistance = 50;
 	int tamNota = 10;
 	JPanel pentagrama;
 	public NotaButtonClickedListener() {
@@ -59,7 +60,7 @@ public class NotaButtonClickedListener implements ActionListener{
 			}	
 			JOptionPane.showMessageDialog(null, "Nota agregada!");
 			DuracionSeleccionada.quitarDuracionSeleccionada();
-			pentagrama.add(label);
+			this.pentagrama.add(label,BorderLayout.CENTER);
 		}
 	}
 	

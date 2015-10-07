@@ -31,18 +31,16 @@ public class GuiJava{
         frame.setLayout(new FlowLayout());
         Dimension d = new Dimension();
  
-        ImageIcon iBlanca = new ImageIcon("images/blanca.png");
-        ImageIcon iClaveSol = new ImageIcon("images/clavesol.png");
-        ImageIcon iCorchea = new ImageIcon("images/corchea.png");
-        ImageIcon iFusa = new ImageIcon("images/fusa.png");
-        ImageIcon iNegra = new ImageIcon("images/negra.png");
-        ImageIcon iRedonda = new ImageIcon("images/redonda.png");
-        ImageIcon iSemiCorchea = new ImageIcon("images/semicorchea.png");
-        ImageIcon iSemiFusa = new ImageIcon("images/semifusa.png");
-        
+        ImageIcon iBlanca = new ImageIcon(this.getClass().getResource("/Img/blanca.png"));
+        ImageIcon iCorchea = new ImageIcon(this.getClass().getResource("/Img/corchea.png"));
+        ImageIcon iFusa = new ImageIcon(this.getClass().getResource("/Img/fusa.png"));
+        ImageIcon iNegra = new ImageIcon(this.getClass().getResource("/Img/negra.png"));
+        ImageIcon iRedonda = new ImageIcon(this.getClass().getResource("/Img/redonda.png"));
+        ImageIcon iSemiCorchea = new ImageIcon(this.getClass().getResource("/Img/semicorchea.png"));
+        ImageIcon iSemiFusa = new ImageIcon(this.getClass().getResource("/Img/semifusa.png"));
+        ImageIcon iClaveSol = new ImageIcon(this.getClass().getResource("/Img/clavesol.png"));
     
         blanca = new JButton(iBlanca);
-        claveSol = new JButton(iClaveSol);
         corchea = new JButton(iCorchea);
         fusa = new JButton(iFusa);
         negra = new JButton(iNegra);
@@ -111,7 +109,7 @@ public class GuiJava{
      
         JPanel panel2 = new JPanel(new FlowLayout());
         panel2.setBackground(Color.GREEN);
-        panel2.setPreferredSize(new Dimension(700, 100));
+        panel2.setPreferredSize(new Dimension(700, 50));
         frame.add(panel2);
         
         panel2.add(C);
@@ -125,7 +123,7 @@ public class GuiJava{
         
         JPanel melodyPanel = new JPanel(new FlowLayout());
         melodyPanel.setBackground(Color.BLUE);
-        melodyPanel.setPreferredSize(new Dimension(700, 200));
+        melodyPanel.setPreferredSize(new Dimension(700, 100));
         frame.add(melodyPanel);
         
         Texto texto = new Texto(Melodia.getInstance().getString(), 50);
@@ -138,11 +136,21 @@ public class GuiJava{
         play.setActionCommand("play");
         melodyPanel.add(play);
         
-        JPanel panelPentagrama = new JPanel(new GridLayout());
+
+        JPanel panelPentagrama = new JPanel();
         panelPentagrama.setBackground(Color.WHITE);
-        panelPentagrama.setPreferredSize(new Dimension(700, 200));
-        frame.add(panelPentagrama);
+        panelPentagrama.setPreferredSize(new Dimension(600, 100));
+        panelPentagrama.setLayout(null);
+        frame.add(panelPentagrama);                                                                                                                                                 
         notaListener.addPentagrama(panelPentagrama);
+        
+        
+        JLabel picLabel = new JLabel(iClaveSol);
+        panelPentagrama.add(picLabel);
+        Dimension size = picLabel.getPreferredSize();
+        picLabel.setBounds(100, 100, size.width, size.height);
+        
+
         
         frame.setVisible(true);//configurando visualizaci�n del frame
     }
