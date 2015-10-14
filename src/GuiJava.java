@@ -30,7 +30,7 @@ public class GuiJava{
  
     public GuiJava(){
  
-        JFrame frame = new JFrame("Compositor de melodï¿½as");
+        JFrame frame = new JFrame("Compositor de melodías");
         frame.setLayout(new FlowLayout());
         Dimension d = new Dimension();
  
@@ -52,7 +52,7 @@ public class GuiJava{
         semiFusa = new JButton(iSemiFusa);
         
         
-        //aï¿½adiendo el listener a los botones para manipular los eventos del click
+        //añadiendo el listener a los botones para manipular los eventos del click
         SimboloButtonClickedListener simboloListener = new SimboloButtonClickedListener();
         PentagramaClickedListener pentagramaListener = new PentagramaClickedListener();
         blanca.addActionListener(simboloListener);
@@ -73,12 +73,12 @@ public class GuiJava{
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);       
         frame.setLocation((int) ((d.getWidth()/2)+290), 50);//para ubicar inicialmente donde se muestra el frame (x, y)
-        frame.setSize(700,450);//configurando tamaï¿½o del frame (ancho, alto)
+        frame.setSize(700,450);//configurando tamaño del frame (ancho, alto)
         frame.setLayout(new FlowLayout());
         
         
         JPanel panel = new JPanel(new FlowLayout());
-        panel.setBackground(Color.ORANGE);
+        panel.setBackground(Color.WHITE);
         panel.setPreferredSize(new Dimension(700, 100));
         frame.add(panel);
         
@@ -91,7 +91,7 @@ public class GuiJava{
         panel.add(redonda);
         
         JPanel melodyPanel = new JPanel(new FlowLayout());
-        melodyPanel.setBackground(Color.BLUE);
+        melodyPanel.setBackground(Color.WHITE);
         melodyPanel.setPreferredSize(new Dimension(700, 100));
         frame.add(melodyPanel);
         
@@ -119,7 +119,7 @@ public class GuiJava{
         clave.setBounds(10,0,50,100); 
         panelPentagrama.add(clave);
         
-        ImageIcon iLinea = new ImageIcon("images/linea.png");
+        ImageIcon iLinea = new ImageIcon(this.getClass().getResource("/ui/linea.png"));
         JLabel linea1 = new JLabel(iLinea);
         JLabel linea2 = new JLabel(iLinea);
         JLabel linea3 = new JLabel(iLinea);
